@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-3">My Orders</h1>
+<table class="table">
+    <thead><tr><th>ID</th><th>Status</th><th>Placed</th></tr></thead>
+    <tbody>
+        {% for o in orders %}
+        <tr><td>#{{ o.id }}</td><td>{{ o.status }}</td><td>{{ o.created_at }}</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

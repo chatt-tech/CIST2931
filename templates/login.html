@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-3">Login</h1>
+<form method="post" class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input class="form-control" name="username" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input class="form-control" name="password" type="password" required>
+    </div>
+    <button class="btn btn-primary">Login</button>
+</form>
+<p class="mt-3">Staff demo account: <code>staff / staff</code></p>
+{% endblock %}

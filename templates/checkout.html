@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-3">Checkout</h1>
+<div class="row">
+    <div class="col-md-7">
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input class="form-control" name="name" value="{{ (user.name if user else '') }}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input class="form-control" name="email" value="{{ (user.email if user else '') }}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Address</label>
+                <textarea class="form-control" name="address">{{ (user.address if user else '') }}</textarea>
+            </div>
+            <button class="btn btn-primary">Place Order</button>
+        </form>
+    </div>
+    <div class="col-md-5">
+        <h5>Order Summary</h5>
+        <ul class="list-group mb-3">
+            {% for it in items %}
+            <li class="list-group-item d-flex justify-content-between">
+                <div>{{ it.product.name }} × {{ it.qty }}</div>
+                <div>${{ '%.2f'|format(it.line_total) }}</div>
+            </li>
+            {% endfor %}
+            <li class="list-group-item d-flex justify-content-between fw-bold">
+                <div>Total</div><div>${{ '%.2f'|format(total) }}</div>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

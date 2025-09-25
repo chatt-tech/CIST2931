@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-3">Order Fulfillment</h1>
+<table class="table table-striped">
+    <thead>
+        <tr><th>ID</th><th>User</th><th>Guest</th><th>Status</th><th>Created</th><th></th></tr>
+    </thead>
+    <tbody>
+        {% for o in orders %}
+        <tr>
+            <td>#{{ o.id }}</td>
+            <td>{{ o.username }}</td>
+            <td>
+                {% if o.guest_name %}
+                    {{ o.guest_name }} ({{ o.guest_email }})<br>{{ o.guest_address }}
+                {% else %}-{% endif %}
+            </td>
+            <td>{{ o.status }}</td>
+            <td>{{ o.created_at }}</td>
+            <td><a class="btn btn-sm btn-outline-primary" href="{{ url_for('advance', order_id=o.id) }}">Advance</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

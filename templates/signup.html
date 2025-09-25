@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-3">Sign Up</h1>
+<form method="post" class="col-md-8">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label class="form-label">Username</label>
+            <input class="form-control" name="username" required>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Password</label>
+            <input class="form-control" name="password" type="password" required>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Full Name</label>
+            <input class="form-control" name="name">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Email</label>
+            <input class="form-control" name="email">
+        </div>
+        <div class="col-12">
+            <label class="form-label">Address</label>
+            <textarea class="form-control" name="address"></textarea>
+        </div>
+    </div>
+    <button class="btn btn-success mt-3">Create Account</button>
+</form>
+{% endblock %}
