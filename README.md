@@ -11,7 +11,7 @@ On Windows, launching this project in VS Code. Here’s what you do step-by-step
 
 ## 1. Unzip the project
 
-* Extract the `flask_ecommerce_simple.zip` you downloaded into a folder (e.g., `C:\Users\<YourName>\Documents\flask_ecommerce_simple`).
+* Download the project.
 
 ---
 
